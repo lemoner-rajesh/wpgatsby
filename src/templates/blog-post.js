@@ -46,8 +46,14 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         </header>
 
         {!!post.content && (
-          <section itemProp="articleBody">{parse(post.content)}</section>
-        )}
+          // <section itemProp="articleBody">{parse(post.content)}</section>
+          <section dangerouslySetInnerHTML={{__html:post.content}} />
+          // <section>hello</section>
+
+)}
+
+
+        {console.log("post.conten",post.content?post.content:null)}
 
         <hr />
 
